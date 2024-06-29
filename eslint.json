@@ -1,0 +1,7 @@
+{
+    "plugins": [
+        "@typescript-eslint",
+        "react",
+        "prettier"
+    ]
+}
