@@ -1,8 +1,9 @@
-import { ButtonSizes, ButtonTypes } from "./type";
+import { ButtonCurvature, ButtonSizes, ButtonTypes } from "./type";
 
-export const getButtonStyle = (type: ButtonTypes, size: ButtonSizes) => {
+export const getButtonStyle = (type: ButtonTypes, size: ButtonSizes,curved: ButtonCurvature) => {
     let backgroundInformation = '';
     let sizeInformation = '';
+    let curvatureInformation = '';
     switch (size) {
         case "small":
             sizeInformation = `
@@ -22,6 +23,7 @@ export const getButtonStyle = (type: ButtonTypes, size: ButtonSizes) => {
         default:
             break;
     }
+
     switch (type) {
         case "default":
             backgroundInformation = `
@@ -38,6 +40,17 @@ export const getButtonStyle = (type: ButtonTypes, size: ButtonSizes) => {
         default: 
             break;
     }
+
+    switch (curved) {
+        case "curved":
+            curvatureInformation = `border-radius: 10px;`;
+            break;
+        case "Microcurvature":
+            curvatureInformation = `border-radius: 5px;`;
+            break;
+        default:
+            break;
+    }
     return `
         button {
             background-color: inherit;
@@ -48,6 +61,9 @@ export const getButtonStyle = (type: ButtonTypes, size: ButtonSizes) => {
         .aeb-button__${type}--${size} {
             ${backgroundInformation}
             ${sizeInformation}
+        }
+        .aeb-button__${curved} {
+            ${curvatureInformation}
         }
     `;
 }

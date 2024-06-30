@@ -1,6 +1,6 @@
 import { buttonConfig } from "./template";
 import { getButtonStyle } from "./style";
-import { ButtonSizes, ButtonTypes } from "./type";
+import { ButtonCurvature, ButtonSizes, ButtonTypes } from "./type";
 
 export default class AebButton extends HTMLElement {
     constructor() {
@@ -17,11 +17,13 @@ export default class AebButton extends HTMLElement {
     init() {
         const type = (this.getAttribute("type") ?? 'default') as ButtonTypes;
         const size = (this.getAttribute("size") ?? 'medium') as ButtonSizes;
+        const curved = (this.getAttribute("curved") ?? "Microcurvature") as ButtonCurvature;
         const disabled = this.getAttribute("disabled");
         this.attachShadow({ mode: "open" });
         this.template.innerHTML = buttonConfig;
-        this.styleElement.textContent = getButtonStyle(type,size);
+        this.styleElement.textContent = getButtonStyle(type,size,curved);
         this.template?.content.querySelector("button")?.classList.add(`aeb-button__${type}--${size}`);
+        this.template?.content.querySelector("button")?.classList.add(`aeb-button__${curved}`);
         if (disabled) {
             this.template?.content.querySelector("button")?.setAttribute('disabled', 'true');
         }

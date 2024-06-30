@@ -1,6 +1,14 @@
 # 开发文档
 
-受制于项目刚起步，所以开发时只能先`pnpm build`，然后运行`test/index.html`，才能看到效果。
+- 运行：`pnpm dev`
+- 打包：`pnpm build`
+
+## 项目技术栈
+
+- web component
+- monorepo
+- Typescript
+- rollup.js
 
 ## 开发目录
 
