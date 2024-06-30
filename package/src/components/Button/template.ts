@@ -4,8 +4,3 @@ export const buttonConfig = `
     </button>
 `;
 
-export const buttonStyle = `
-    button {
-        background-color: red;
-    }
-`;

@@ -1,7 +1,9 @@
 import typescript from 'rollup-plugin-typescript2';
 import fs from 'fs';
+import scss from 'rollup-plugin-scss'
 
-// 同步构建配置数组
+
+
 function buildConfig() {
     const rollupConfigArray = [];
     const dir = fs.readdirSync('./package/src/components');
@@ -20,7 +22,8 @@ function buildConfig() {
                 plugins: [
                     typescript({
                         tsconfig: './tsconfig.json',
-                    })
+                    }),
+                    scss()
                 ]
             });
         }
@@ -29,5 +32,4 @@ function buildConfig() {
     return rollupConfigArray;
 }
 
-// 导出配置数组
 export default buildConfig();
