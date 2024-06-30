@@ -1,3 +1,4 @@
+import { errorColor_6, primaryColor_6, successColor_6, warningColor_6 } from "../../contants/publicStyleValue";
 import { ButtonCurvature, ButtonSizes, ButtonTypes } from "./type";
 
 export const getButtonStyle = (type: ButtonTypes, size: ButtonSizes,curved: ButtonCurvature) => {
@@ -33,7 +34,25 @@ export const getButtonStyle = (type: ButtonTypes, size: ButtonSizes,curved: Butt
             break;
         case 'primary':
             backgroundInformation = `
-                background-color: #007bff;
+                background-color: ${primaryColor_6};
+                color: white;
+            `;
+            break;
+        case 'danger':
+            backgroundInformation = `
+                background-color: ${errorColor_6};
+                color: white;
+            `;
+            break;
+        case 'warning':
+            backgroundInformation = `
+                background-color: ${warningColor_6};
+                color: white;
+            `;
+            break;
+        case 'success':
+            backgroundInformation = `
+                background-color: ${successColor_6};
                 color: white;
             `;
             break;
