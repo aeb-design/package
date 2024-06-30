@@ -1,10 +1,8 @@
-import typescript from 'rollup-plugin-typescript2';
 import fs from 'fs';
-import scss from 'rollup-plugin-scss'
 
 
 
-function buildConfig() {
+function buildConfig(plugins) {
     const rollupConfigArray = [];
     const dir = fs.readdirSync('./package/src/components');
 
@@ -19,12 +17,7 @@ function buildConfig() {
                     format: 'umd',
                     name: item,
                 },
-                plugins: [
-                    typescript({
-                        tsconfig: './tsconfig.json',
-                    }),
-                    scss()
-                ]
+                plugins: plugins
             });
         }
     });
@@ -32,4 +25,4 @@ function buildConfig() {
     return rollupConfigArray;
 }
 
-export default buildConfig();
+export default buildConfig;
