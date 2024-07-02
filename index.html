@@ -6,18 +6,22 @@
     <title>Document</title>
 </head>
 <body>
+    <button onclick="handleClick()">按钮</button>
     <aeb-button onclick="handleClick()" type="primary">按钮</aeb-button>
     <aeb-button onclick="handleClick()" type="primary" size="small">按钮</aeb-button>
     <aeb-button onclick="handleClick()" type="primary" curved="curved">按钮</aeb-button>
     <aeb-button onclick="handleClick()" size="large" curved="curved">按钮</aeb-button>
-    <aeb-button type="danger">按钮</aeb-button>
+    <aeb-button id="btn" type="danger">按钮</aeb-button>
     <aeb-button type="success">按钮</aeb-button>
     <aeb-button type="warning">按钮</aeb-button>
+    <aeb-button type="info">按钮</aeb-button>
+    <aeb-button type="danger" disabled="true">按钮</aeb-button>
 </body>
 <script src="../libs/Button/index.js"></script>
 <script>
     function handleClick() {
-        console.log('click')
+        console.log('click');
     }
+    document.getElementById('btn').setAttribute('type','success');
 </script>
 </html>
