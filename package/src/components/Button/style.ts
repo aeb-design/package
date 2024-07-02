@@ -1,24 +1,24 @@
-import { errorColor_6, primaryColor_6, successColor_6, warningColor_6 } from "../../contants/publicStyleValue";
+import { errorColor_6, infoColor_6, primaryColor_6, successColor_6, warningColor_6 } from "../../contants/publicStyleValue";
 import { ButtonCurvature, ButtonSizes, ButtonTypes } from "./type";
 
-export const getButtonStyle = (type: ButtonTypes, size: ButtonSizes,curved: ButtonCurvature) => {
+export const getButtonStyle = (type: ButtonTypes, size: ButtonSizes,curved: ButtonCurvature,disabled: string) => {
     let backgroundInformation = '';
     let sizeInformation = '';
     let curvatureInformation = '';
     switch (size) {
         case "small":
             sizeInformation = `
-                padding: 5px 10px;
+                padding: 0.2rem 0.1rem;
             `;
             break;
         case 'medium':
             sizeInformation = `
-                padding: 10px 20px;
+                padding: 0.4rem 1rem;
             `;
             break;
         case "large":
             sizeInformation = `
-                padding: 15px 30px;
+                padding: 0.6rem 2rem;
             `;
             break;
         default:
@@ -56,6 +56,12 @@ export const getButtonStyle = (type: ButtonTypes, size: ButtonSizes,curved: Butt
                 color: white;
             `;
             break;
+        case 'Info':
+            backgroundInformation = `
+                background-color: ${infoColor_6};
+                color: white;
+            `;
+            break;
         default: 
             break;
     }
@@ -73,9 +79,9 @@ export const getButtonStyle = (type: ButtonTypes, size: ButtonSizes,curved: Butt
     return `
         button {
             background-color: inherit;
-        }
-        button:hover {
-            cursor: pointer;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
         }
         .aeb-button__${type}--${size} {
             ${backgroundInformation}
@@ -83,6 +89,18 @@ export const getButtonStyle = (type: ButtonTypes, size: ButtonSizes,curved: Butt
         }
         .aeb-button__${curved} {
             ${curvatureInformation}
+        }
+        .aeb-button--${disabled} {
+            ${disabled === "true" ? 
+                "opacity: 0.5;" : ""
+            }
+        }
+        .aeb-button--${disabled} :hover {
+            ${
+                disabled === "true" ?
+                    "cursor: not-allowed" :
+                     "cursor: pointer"
+            }
         }
     `;
 }

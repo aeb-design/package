@@ -77,3 +77,23 @@ export const successColor_8 = "#008040";
 export const successColor_9 = "#00592b";
 
 export const successColor_10 = "#003318";
+
+export const infoColor_1 = "#fff";
+
+export const infoColor_2 = "#f7f7f7";
+
+export const infoColor_3 = "#f2f2f2";
+
+export const infoColor_4 = "#e8e8e8";
+
+export const infoColor_5 = "#d9d9d9";
+
+export const infoColor_6 = "#bfbfbf";
+
+export const infoColor_7 = "#8f8f8f";
+
+export const infoColor_8 = "#5c5c5c";
+
+export const infoColor_9 = "#2e2e2e";
+
+export const infoColor_10 = "#000";
