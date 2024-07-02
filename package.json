@@ -9,7 +9,8 @@
     "prepare": "husky",
     "lint": "eslint ./package/",
     "build": "rollup -c ./rollup.config.prod.js",
-    "dev": "rollup -c ./rollup.config.dev.js --watch"
+    "dev": "rollup -c ./rollup.config.dev.js --watch",
+    "preinstall": "npx only-allow pnpm"
   },
   "keywords": [],
   "author": "",
