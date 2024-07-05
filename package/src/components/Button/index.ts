@@ -10,10 +10,12 @@ export default class AebButton extends HTMLElement {
     }
     template = document.createElement('template');
     styleElement = document.createElement('style');
+
     create() {
         this.shadowRoot?.appendChild(this.template.content.cloneNode(true));
         this.shadowRoot?.appendChild(this.styleElement);
     }
+    
     render() {
         const button = this.shadowRoot?.querySelector('button');
         if (button) {
@@ -46,7 +48,7 @@ export default class AebButton extends HTMLElement {
         return ["type", "size","curved","disabled"];
     }
 
-    attributeChangedCallback(name: string, oldValue: string | null, newValue: string | null) {
+    attributeChangedCallback(name: string) {
         if (!['type', 'size', 'curved', 'disabled'].includes(name)) {
             return;
         }
