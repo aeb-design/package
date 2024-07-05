@@ -1,4 +1,4 @@
-import { errorColor_6, infoColor_6, primaryColor_6, successColor_6, warningColor_6 } from "../../contants/publicStyleValue";
+import { errorColor_6, infoColor_6, primaryColor_6, successColor_6, warningColor_6 } from "../PublicStyle";
 import { ButtonCurvature, ButtonSizes, ButtonTypes } from "./type";
 
 export const getButtonStyle = (type: ButtonTypes, size: ButtonSizes,curved: ButtonCurvature,disabled: string) => {
