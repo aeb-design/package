@@ -103,10 +103,10 @@ export const getLinkStyle = (type: LinkType, size: LinkSize, disabled: LinkDisab
         }
 		.aeb-link__${type}--${size}:hover {
 			${disabledStyle}
+			${decorationStyle}
 		}
 		.aeb-link--${disabled}__${decoration} {
 			${disabledStyle}
-			${decorationStyle}
 		}
     `;
 }

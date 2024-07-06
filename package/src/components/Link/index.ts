@@ -47,7 +47,7 @@ export default class AebLink extends HTMLElement {
 		const type = (this.getAttribute('type') ?? 'default') as LinkType;
 		const size = (this.getAttribute('size') ?? 'medium') as LinkSize;
 		const disabled = (this.getAttribute('disabled') ?? 'false') as LinkDisabled;
-		const decoration = (this.getAttribute('decoration') ?? 'none') as LinkDecoration;
+		const decoration = (this.getAttribute('decoration') ?? 'underline') as LinkDecoration;
 		this.styleElement.textContent = getLinkStyle(type, size, disabled, decoration);
         const linkElement = this.shadowRoot?.querySelector('a');
 		const alt = this.getAttribute('alt') ?? 'link';
@@ -73,7 +73,7 @@ export default class AebLink extends HTMLElement {
 			const type = (this.getAttribute('type') ?? 'default') as LinkType;
 			const size = (this.getAttribute('size') ?? 'medium') as LinkSize;
 			const disabled = (this.getAttribute('disabled') ?? 'false') as LinkDisabled;
-			const decoration = (this.getAttribute('decoration') ?? 'none') as LinkDecoration;
+			const decoration = (this.getAttribute('decoration') ?? 'underline') as LinkDecoration;
             link.classList.add(`aeb-link__${type}--${size}`);
 			link.classList.add(`aeb-link--${disabled}__${decoration}`);
             this.styleElement.textContent = getLinkStyle(type, size, disabled, decoration);
